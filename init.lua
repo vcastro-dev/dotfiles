@@ -16,21 +16,27 @@ require("lazy").setup({
 -- Theme
 vim.cmd.colorscheme("catppuccin")
 
--- Comando
+-- Preference
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- Command
+local dotfiles = os.getenv("HOME") .. "/dotfiles"
+
 vim.api.nvim_create_user_command('EditConfig', function()
-  vim.cmd('edit D:/Workspace/dotfiles/init.lua')
+  vim.cmd('edit ' .. dotfiles .. '/init.lua')
 end, {})
 
 vim.api.nvim_create_user_command('EditWezterm', function()
-  vim.cmd('edit D:/Workspace/dotfiles/.wezterm.lua')
-end, {})
-
-vim.api.nvim_create_user_command('EditBashrc', function()
-  vim.cmd('edit ' .. os.getenv('HOME') .. '/.bashrc')
+  vim.cmd('edit ' .. dotfiles .. '/.wezterm.lua')
 end, {})
 
 vim.api.nvim_create_user_command('EditTmux', function()
-  vim.cmd('edit D:/Workspace/dotfiles/.tmux.conf')
+  vim.cmd('edit ' .. dotfiles .. '/.tmux.conf')
+end, {})
+
+vim.api.nvim_create_user_command('EditBashrc', function()
+  vim.cmd('edit ' .. dotfiles .. '/.bashrc_custom')
 end, {})
 
 -- Atalho

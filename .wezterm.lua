@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 
 return {
-	default_prog = { 'C:\\Program Files\\Git\\usr\\bin\\bash.exe', '--login', '-i' },
+	default_prog = { 'wsl.exe' },
 	color_scheme = 'Catppuccin Mocha',
 	window_background_opacity = 0.95,
 	window_padding = { left = 12, right = 12, top = 12, bottom = 12 },

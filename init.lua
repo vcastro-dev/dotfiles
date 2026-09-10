@@ -25,6 +25,14 @@ vim.api.nvim_create_user_command('EditWezterm', function()
   vim.cmd('edit D:/Workspace/dotfiles/.wezterm.lua')
 end, {})
 
+vim.api.nvim_create_user_command('EditBashrc', function()
+  vim.cmd('edit ' .. os.getenv('HOME') .. '/.bashrc')
+end, {})
+
+vim.api.nvim_create_user_command('EditTmux', function()
+  vim.cmd('edit D:/Workspace/dotfiles/.tmux.conf')
+end, {})
+
 -- Atalho
 vim.keymap.set('n', '<C-p>', function()
   require('telescope.builtin').find_files()

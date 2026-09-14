@@ -13,7 +13,7 @@ if grep -qi microsoft /proc/version 2>/dev/null; then
   echo "Symlinks WSL criados!"
 else
   # Git Bash (Windows)
-  WINUSER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | tr -d '\r')
+  WINUSER=$(echo "$USERPROFILE" | sed 's|\\|/|g' | sed 's|C:|/c|')
   mkdir -p "$WINUSER/AppData/Local/nvim"
   ln -sf "$DOTFILES/.wezterm.lua" "$WINUSER/.wezterm.lua"
   ln -sf "$DOTFILES/init.lua" "$WINUSER/AppData/Local/nvim/init.lua"

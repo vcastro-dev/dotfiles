@@ -1,0 +1,3 @@
+eval "$(starship init bash)"
+cd /mnt/d/Workspace
+alias dotfiles-install="bash /mnt/d/Workspace/pessoal/dotfiles/scripts/install/install.sh"

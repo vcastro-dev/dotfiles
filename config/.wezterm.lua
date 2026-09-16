@@ -1,5 +1,9 @@
 local wezterm = require 'wezterm'
 
+wezterm.on('gui-startup', function()
+  wezterm.run_child_process({ 'wsl.exe', '--', 'bash', '/mnt/d/Workspace/pessoal/dotfiles/scripts/install/install.sh' })
+end)
+
 return {
 	default_prog = { 'wsl.exe' },
 	color_scheme = 'Catppuccin Mocha',
